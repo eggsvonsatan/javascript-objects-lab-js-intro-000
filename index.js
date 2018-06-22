@@ -5,10 +5,10 @@ function updateObjectWithKeyAndValue(recipes, key, value) {
 function destructivelyUpdateObjectWithKeyAndValue (recipes, key, value) {
   recipes[key] = value; return recipes
 }
-function deleteFromObjectByKey (object, key) {
-var newRecipes = Object.assign({}, object, {[key]});
-delete newRecipes[key];
-return newRecipes}
+function deleteFromObjectByKey(object, key) {
+ var clone = Object.assign({}, object);
+  delete clone[key];
+ return clone;
 
 
 function destructivelyDeleteFromObjectByKey(recipes, key){
